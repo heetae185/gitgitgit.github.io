@@ -9,13 +9,17 @@ public class HelloJAVA {
 		char alpha = scn.next().charAt(0);
 		scn.close();
 		int num = countChar(str, alpha);
-		System.out.println(num);
+		System.out.println("입력한 문자는 " + num + "번째 문자입니다");
 	}
+
 	static int countChar(String s, char c) {
 		int count = 0;
-		for(int i = 0; i < s.length(); i++)
-			if(s.charAt(i) == c)
+		for(int i = 0; i < s.length(); i++) {
+			if(s.charAt(i) != c)
 				count++;
-		return count;
+			else
+				break;
+		}
+		return count+1;
 	}
 }
